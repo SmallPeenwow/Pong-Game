@@ -52,4 +52,21 @@ document.addEventListener('mousemove', (e) => {
 	playerPaddle.position = (e.y / window.innerHeight) * 100;
 });
 
+document.addEventListener('keydown', (event) => {
+	if (playerPaddle.position > 4 && playerPaddle.position < 96) {
+		switch (event.key) {
+			case 'ArrowUp':
+				playerPaddle.position = playerPaddle.position - 3;
+				break;
+			case 'ArrowDown':
+				playerPaddle.position = playerPaddle.position + 3;
+				break;
+		}
+	} else if (playerPaddle.position < 4 && playerPaddle.position < 96) {
+		playerPaddle.position = 5;
+	} else if (playerPaddle.position > 96 && playerPaddle.position > 4) {
+		playerPaddle.position = 95;
+	}
+});
+
 window.requestAnimationFrame(update);
