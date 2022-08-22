@@ -53,16 +53,16 @@ document.addEventListener('mousemove', (e) => {
 });
 
 document.addEventListener('keydown', (event) => {
-	if (playerPaddle.position > 4 && playerPaddle.position < 96) {
+	if (playerPaddle.position > 2 && playerPaddle.position < 96) {
 		switch (event.key) {
 			case 'ArrowUp':
-				playerPaddle.position = playerPaddle.position - 3;
+				playerPaddle.position = playerPaddle.position - 4;
 				break;
 			case 'ArrowDown':
-				playerPaddle.position = playerPaddle.position + 3;
+				playerPaddle.position = playerPaddle.position + 4;
 				break;
 		}
-	} else if (playerPaddle.position < 4 && playerPaddle.position < 96) {
+	} else if (playerPaddle.position < 2 && playerPaddle.position < 96) {
 		playerPaddle.position = 5;
 	} else if (playerPaddle.position > 96 && playerPaddle.position > 4) {
 		playerPaddle.position = 95;
